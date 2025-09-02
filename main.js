@@ -17,6 +17,7 @@ $(document).ready(function () {
   if (window.location.pathname === "/account/partners") rpLib.partnersPage.init();
   if (window.location.pathname === "/account/events") rpLib.eventsPage.init();
   if (window.location.pathname === "/account/users") rpLib.usersPage.init();
+  if (window.location.pathname === "/account/settings") rpLib.settingsPage.init();
 
   if (window.location.pathname.startsWith("/partners/")) {
     // Wait a bit to ensure MixItUp is initialized
@@ -27,6 +28,11 @@ $(document).ready(function () {
 });
 
 var rpLib = {
+  settingsPage: {
+    init: function () {
+      rpLib.utils.initCitySelection();
+    },
+  },  
   getStartedPage: {
     init: function () {
       rpLib.utils.initCitySelection();
