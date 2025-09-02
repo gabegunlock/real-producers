@@ -6,6 +6,7 @@ const PARTNER_CATEGORIES_COLLECTION_ID = "65e7fc8199c534cfe2cba083";
 const SITE_ID = "658f30a87b1a52ef8ad0b732";
 
 
+
 $(document).ready(function () {
   rpLib.utils.injectCSS();
   rpLib.utils.injectDependencies();
