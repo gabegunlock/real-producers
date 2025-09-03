@@ -29,7 +29,7 @@ $(document).ready(function () {
 
 var rpLib = {
   settingsPage: {
-    init: function () {
+    init: async function () {
       rpLib.utils.initCitySelection();
       
       
@@ -49,7 +49,7 @@ var rpLib = {
     },
   },  
   getStartedPage: {
-    init: async function () {
+    init: function () {
       rpLib.utils.initCitySelection();
     },
     fetchBrandDetails: function (brandId) {
