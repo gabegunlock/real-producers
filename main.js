@@ -33,8 +33,8 @@ var rpLib = {
       rpLib.utils.initCitySelection((brandId) => {
         // Load existing data into #alert-bar-text
         // Get brand slug -> send GET request to proxy api to get brand cms details -> populate the input field with data 
-        const selectedCitySlug = $("#city-select option:selected").attr("data-slug");
-        const brandPromise = rpLib.settingsPage.fetchBrandDetails(selectedCitySlug);
+        const selectedCityId = $("#city-select option:selected").val();
+        const brandPromise = rpLib.settingsPage.fetchBrandDetails(selectedCityId);
         Promise.all([brandPromise]).then(() => {
           $(".#alert-bar-text").text(brandResponse.fieldData["alert-bar-text"]);
         });
