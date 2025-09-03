@@ -34,11 +34,11 @@ var rpLib = {
     },
   },  
   getStartedPage: {
-    init: function () {
+    init: async function () {
       rpLib.utils.initCitySelection();
 
       const selectedCitySlug = $("#city-select option:selected").attr("data-slug");
-      const brandResponse = rpLib.fetchBrandDetails(selectedCitySlug);
+      const brandResponse = await rpLib.fetchBrandDetails(selectedCitySlug);
       $(".#alert-bar-text").text(brandResponse.fieldData["alert-bar-text"];
       
 
