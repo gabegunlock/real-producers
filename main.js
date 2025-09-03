@@ -36,6 +36,35 @@ var rpLib = {
   getStartedPage: {
     init: function () {
       rpLib.utils.initCitySelection();
+
+      const selectedCitySlug = $("#city-select option:selected").attr("data-slug");
+      const brandResponse = rpLib.fetchBrandDetails(selectedCitySlug);
+      $(".#alert-bar-text").text(brandResponse.fieldData["alert-bar-text"];
+      
+
+      // take #alert-bar-text
+      // Load existing alert-bar-text
+        // Get brand slug -> send GET request to proxy api to get brand cms details -> populate the input field with data 
+
+
+      // Updates alert-bar-text
+        // When submit button is clicked -> parse #alert-bar-text -> send POST request to proxy api
+      
+    },
+    fetchBrandDetails: function (brandId) {
+      return new Promise((resolve, reject) => {
+        $.ajax({
+          url: `https://vhpb1dr9je.execute-api.us-east-1.amazonaws.com/dev/https://api.webflow.com/v2/collections/${BRANDS_COLLECTION_ID}/items/${brandId}/live`,
+          method: "GET",
+          success: function (response) {
+            resolve();
+          },
+          error: function (error) {
+            console.error("Error fetching brand details:", error);
+            reject(error);
+          },
+        });
+      });
     },
   },
   dashboardPage: {
