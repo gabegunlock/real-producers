@@ -31,12 +31,7 @@ var rpLib = {
   settingsPage: {
     init: function () {
       rpLib.utils.initCitySelection();
-    },
-  },  
-  getStartedPage: {
-    init: async function () {
-      rpLib.utils.initCitySelection();
-
+      
       
       // take #alert-bar-text
       // Load existing alert-bar-text
@@ -51,6 +46,11 @@ var rpLib = {
       // Updates alert-bar-text
         // When submit button is clicked -> parse #alert-bar-text -> send POST request to proxy api
       
+    },
+  },  
+  getStartedPage: {
+    init: async function () {
+      rpLib.utils.initCitySelection();
     },
     fetchBrandDetails: function (brandId) {
       return new Promise((resolve, reject) => {
