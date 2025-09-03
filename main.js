@@ -37,14 +37,15 @@ var rpLib = {
     init: async function () {
       rpLib.utils.initCitySelection();
 
-      const selectedCitySlug = $("#city-select option:selected").attr("data-slug");
-      const brandResponse = await rpLib.fetchBrandDetails(selectedCitySlug);
-      $(".#alert-bar-text").text(brandResponse.fieldData["alert-bar-text"];
       
-
       // take #alert-bar-text
       // Load existing alert-bar-text
         // Get brand slug -> send GET request to proxy api to get brand cms details -> populate the input field with data 
+      const selectedCitySlug = $("#city-select option:selected").attr("data-slug");
+      const brandResponse = await rpLib.fetchBrandDetails(selectedCitySlug);
+      $(".#alert-bar-text").text(brandResponse.fieldData["alert-bar-text"]);
+      
+
 
 
       // Updates alert-bar-text
