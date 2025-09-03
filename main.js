@@ -49,11 +49,6 @@ var rpLib = {
         // When submit button is clicked -> parse #alert-bar-text -> send POST request to proxy api
       
     },
-  },  
-  getStartedPage: {
-    init: function () {
-      rpLib.utils.initCitySelection();
-    },
     fetchBrandDetails: function (brandId) {
       return new Promise((resolve, reject) => {
         $.ajax({
@@ -68,6 +63,11 @@ var rpLib = {
           },
         });
       });
+    },
+  },  
+  getStartedPage: {
+    init: function () {
+      rpLib.utils.initCitySelection();
     },
   },
   dashboardPage: {
